@@ -1,6 +1,7 @@
 "use strict";
 
 const http = require('http');
+const PORT = process.ENV || 3000;
 const url = require('url');
 const querystring = require('querystring');
 const cowsay = require('cowsay');
@@ -33,8 +34,7 @@ const server = http.createServer((req, res) => {
   res.end();
 })
 
-const PORT = process.ENV || 3000;
 server.listen(PORT, () => {
-  console.log('Listening on port: ', PORT);
+  console.log('Listening on port: ', PORT, 'CTRL+C to close');
   console.log('http://localhost:' + PORT);
 })
